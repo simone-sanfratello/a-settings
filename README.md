@@ -19,7 +19,7 @@ load .settings.js in process dir, else use defaults
 
 define defaults
 
-verbosity
+verbosity: argv contains --verbose
 
 use examples
 
@@ -34,6 +34,17 @@ travisCI nodejs v 8, 9 ,10
 doc
 
 engine >= 8
+
+### TEST
+
+- load from .settings.js
+- fail load .settings.js, use default
+- load from package.json
+- check freeze
+settings.env = 'eee'
+console.log(settings.env)
+settings.eeenv = '123'
+console.log(settings.eeenv)
 
 ### security
 

@@ -1,7 +1,7 @@
 const path = require('path')
 
 const DEFAULT = {
-  path: path.join(process.cwd(), 'envs'),
+  path: path.join(process.cwd(), 'settings'),
   processEnv: 'NODE_ENV',
   argv: 2,
   configFile: '.settings.js'

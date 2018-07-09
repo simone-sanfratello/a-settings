@@ -1,0 +1,23 @@
+{
+  "name": "settings",
+  "version": "1.0.0",
+  "description": "node.js multi-env settings",
+  "main": "main.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://simone-sanfratello@github.com/braceslab/settings.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/braceslab/settings/issues"
+  },
+  "homepage": "https://github.com/braceslab/settings#readme"
+}
