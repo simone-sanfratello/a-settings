@@ -1,0 +1,24 @@
+# Don't check auto-generated stuff into git
+/coverage
+/build
+
+/node_modules
+/package-lock.json
+/npm-debug.log
+
+.DS_Store
+.idea
+
+# Logs
+logs
+*.log
+
+# Distribution
+dist
+
+# Runtime data
+.cache
+pids
+*.pid
+*.seed
+*.pid.lock
