@@ -1,5 +1,5 @@
 const http = require('http')
-const settings = require('settings')
+const settings = require('a-settings')
 
 http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type': 'text/plain'})
