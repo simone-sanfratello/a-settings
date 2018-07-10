@@ -1,6 +1,6 @@
 {
   "name": "a-settings",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Provide settings for multi environments",
   "main": "main.js",
   "scripts": {

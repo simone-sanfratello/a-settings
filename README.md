@@ -87,10 +87,10 @@ see [example/](./example/)
 
 Default options are
 
-**path** directory containing env settings files, default is `/settings` in process current working
-**processEnv** process env name, default is `NODE_ENV`, so `NODE_ENV=beta node app.jsv`
-**argv** process argv index, default is `2` (the third) so `node app.js dev`
-If `$env` is provided in both ways as `NODE_ENV=beta node app.js dev`, env var wins, so in this case will be `beta` 
+**path** directory containing env settings files, default is `/settings` in process current working  
+**processEnv** process env name, default is `NODE_ENV`, so `NODE_ENV=beta node app.jsv`  
+**argv** process argv index, default is `2` (the third) so `node app.js dev`  
+If `$env` is provided in both ways as `NODE_ENV=beta node app.js dev`, env var wins, so in this case will be `beta`   
 
 ### Custom Options
 to use custom otions, use `.settings.js` in app root directory
