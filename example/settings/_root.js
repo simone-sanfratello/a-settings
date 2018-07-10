@@ -1,5 +1,5 @@
 const app = {
-  url: 'https://dev.myapp.com',
+  url: '',
   name: 'myapp',
   port: 9001,
   log: {

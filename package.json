@@ -1,23 +1,22 @@
 {
-  "name": "settings",
+  "name": "a-settings",
   "version": "1.0.0",
-  "description": "node.js multi-env settings",
+  "description": "Provide settings for multi environments",
   "main": "main.js",
-  "directories": {
-    "example": "examples",
-    "test": "test"
-  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"@todo\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://simone-sanfratello@github.com/braceslab/settings.git"
+    "url": "git+https://github.com/braceslab/a-settings.git"
   },
-  "author": "",
-  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/braceslab/settings/issues"
+    "url": "https://github.com/braceslab/a-settings/issues"
   },
-  "homepage": "https://github.com/braceslab/settings#readme"
+  "homepage": "https://github.com/braceslab/a-settings#readme",
+  "author": "Simone Sanfratello <simone@braceslab.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 8"
+  }
 }

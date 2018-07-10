@@ -14,6 +14,7 @@ const Settings = function () {
   let __env
   let __settings
   let __config
+  let __verbose
 
   function __init () {
     // load .settings.js file
@@ -26,18 +27,19 @@ const Settings = function () {
     }
 
     __env = process.env[__config.processEnv] || process.argv[__config.argv]
+    __verbose = process.argv.indexOf('--verbose')
     __load(__env)
   }
 
   function __load (env) {
     if (!env) {
-      console.error('missing env in settings; check .settings.js file')
+      __verbose && console.error('missing env in settings; check .settings.js file')
       throw new Error('SETTINGS_LOAD_ERROR')
     }
     try {
       __settings = require(path.join(__config.path, env))
     } catch (error) {
-      console.error('unable to load settings in', __config.path, error)
+      __verbose && console.error('unable to load settings in', __config.path, error)
       throw new Error('SETTINGS_LOAD_ERROR')
     }
   }
@@ -51,7 +53,5 @@ const Settings = function () {
 }
 
 const settings = new Settings()
-
-// @todo Object.freeze(settings)
 
 module.exports = settings
