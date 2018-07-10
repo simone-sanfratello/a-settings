@@ -11,7 +11,7 @@ Provide settings for multi environments
 - Declare env in `process.argv` or in `NODE_ENV`
 - DRY settings using root configuration and env customization
 - Improve security avoiding settings runtime reassignment or injection
-- Stop doing this, it's not maintable
+- Stop doing this, it's not maintanable
 ````js
 if(process.env.NODE_ENV == 'debug') {
   port = 1234
