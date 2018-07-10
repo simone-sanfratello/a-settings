@@ -1,7 +1,7 @@
 {
   "name": "a-settings",
-  "version": "1.0.2",
-  "description": "Provide settings for multi environments",
+  "version": "1.0.3",
+  "description": "node.js settings provider for different environments",
   "main": "main.js",
   "scripts": {
     "test": "echo \"@todo\" && exit 1"

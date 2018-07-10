@@ -4,7 +4,7 @@
 [![NPM Downloads](https://img.shields.io/npm/dm/a-settings.svg?style=flat)](https://www.npmjs.org/package/a-settings)
 [![JS Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
-Provide settings for multi environments
+node.js settings provider for different environments
 
 ## Purpose
 
@@ -28,10 +28,10 @@ In `app.js` and in any other .js file get settings from `settings/$env`
 const http = require('http')
 const settings = require('a-settings')
 
-http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'})
-  res.write(settings.env)
-  res.end()
+http.createServer((request, response) => {
+  response.writeHead(200, {'Content-Type': 'text/plain'})
+  response.write(`Hey, I am ${settings.env} server`)
+  response.end()
 }).listen(settings.port)
 ````
 
