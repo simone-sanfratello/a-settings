@@ -1,6 +1,6 @@
 {
   "name": "a-settings",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "node.js settings provider for different environments",
   "main": "main.js",
   "scripts": {

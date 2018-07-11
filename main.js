@@ -33,13 +33,13 @@ const Settings = function () {
 
   function __load (env) {
     if (!env) {
-      __verbose && console.error('missing env in settings; check .settings.js file')
-      throw new Error('SETTINGS_LOAD_ERROR')
+      __verbose && console.warn('missing env in settings > use _root settings')
+      __env = env = '_root'
     }
     try {
       __settings = require(path.join(__config.path, env))
     } catch (error) {
-      __verbose && console.error('unable to load settings in', __config.path, error)
+      __verbose && console.error('unable to load settings', env, ' in', __config.path, error)
       throw new Error('SETTINGS_LOAD_ERROR')
     }
   }
