@@ -1,6 +1,6 @@
 {
   "name": "a-settings",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "node.js settings provider for different environments",
   "main": "main.js",
   "scripts": {
@@ -9,9 +9,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/braceslab/a-settings.git"
-  },
-  "bugs": {
-    "url": "https://github.com/braceslab/a-settings/issues"
   },
   "homepage": "https://github.com/braceslab/a-settings#readme",
   "author": "Simone Sanfratello <simone@braceslab.com>",

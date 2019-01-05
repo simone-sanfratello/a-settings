@@ -22,7 +22,7 @@ const Settings = function () {
     try {
       __config = require(__configFile)
     } catch (error) {
-      console.warn('settings config file', __configFile, 'not found, use defaults')
+      // console.warn('settings config file', __configFile, 'not found, use defaults')
       __config = DEFAULT
     }
 
