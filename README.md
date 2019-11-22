@@ -115,7 +115,6 @@ node app.js alpha --verbose
 ````
 
 ### TODO
-- [ ] add travis
 - [ ] check node engine >= 8
 - [ ] load options from `package.json`
 
@@ -123,7 +122,7 @@ node app.js alpha --verbose
 
 The MIT License (MIT)
 
-Copyright (c) 2018 [braces lab](https://braceslab.com)
+Copyright (c) 2018-19 [braces lab](https://braceslab.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/braceslab/a-settings.git"
   },
-  "homepage": "https://github.com/braceslab/a-settings#readme",
   "author": "Simone Sanfratello <simone@braceslab.com>",
   "license": "MIT",
   "engines": {

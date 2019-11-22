@@ -1,3 +1,5 @@
+'use strict'
+
 const path = require('path')
 
 const DEFAULT = {
@@ -7,9 +9,6 @@ const DEFAULT = {
   configFile: '.settings.js'
 }
 
-/**
- * singleton module
- */
 const Settings = function () {
   let __env
   let __settings
@@ -22,7 +21,7 @@ const Settings = function () {
     try {
       __config = require(__configFile)
     } catch (error) {
-      // console.warn('settings config file', __configFile, 'not found, use defaults')
+      __verbose && console.warn('settings config file', __configFile, 'not found, use defaults')
       __config = DEFAULT
     }
 
@@ -33,7 +32,7 @@ const Settings = function () {
 
   function __load (env) {
     if (!env) {
-      __verbose && console.warn('missing env in settings > use _root settings')
+      __verbose && console.warn('missing env in settings > use "_root" settings')
       __env = env = '_root'
     }
     try {

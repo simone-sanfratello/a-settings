@@ -1,3 +1,5 @@
+'use strict'
+
 const app = {
   url: '',
   name: 'myapp',

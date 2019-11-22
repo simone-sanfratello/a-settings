@@ -1,3 +1,5 @@
+'use strict'
+
 const app = require('./_root')
 
 app.port = 9002

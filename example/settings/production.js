@@ -1,3 +1,5 @@
+'use strict'
+
 const app = require('./_root')
 
 app.url = 'https://myapp.com'
