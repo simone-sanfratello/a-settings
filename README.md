@@ -12,6 +12,9 @@ node.js settings provider for different environments
 - DRY settings using root configuration and env customization
 - Improve security avoiding settings runtime reassignment or injection
 - Stop doing this, it's not maintanable
+- Freeze values
+- Use plain `js` over `json` and env files and be free to use comments and functions without limitations
+
 ````js
 if(process.env.NODE_ENV == 'debug') {
   port = 1234

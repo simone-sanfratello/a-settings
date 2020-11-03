@@ -9,45 +9,62 @@ const DEFAULT = {
   configFile: '.settings.js'
 }
 
-const Settings = function () {
-  let __env
-  let __settings
-  let __config
-  let __verbose
-
-  function __init () {
-    // load .settings.js file
-    const __configFile = path.join(process.cwd(), DEFAULT.configFile)
-    try {
-      __config = require(__configFile)
-    } catch (error) {
-      __verbose && console.warn('settings config file', __configFile, 'not found, use defaults')
-      __config = DEFAULT
-    }
-
-    __env = process.env[__config.processEnv] || process.argv[__config.argv]
-    __verbose = process.argv.indexOf('--verbose')
-    __load(__env)
+function deepFreeze (object) {
+  Object.freeze(object)
+  if (object === undefined) {
+    return object
   }
 
-  function __load (env) {
+  Object.getOwnPropertyNames(object).forEach(function (prop) {
+    if (object[prop] !== null &&
+      (typeof object[prop] === 'object' || typeof object[prop] === 'function') &&
+      !Object.isFrozen(object[prop])) {
+      deepFreeze(object[prop])
+    }
+  })
+
+  return object
+};
+
+const Settings = function () {
+  let _env
+  let _settings
+  let _config
+  let _verbose
+
+  function _init () {
+    // load .settings.js file if any
+    const _configFile = path.join(process.cwd(), DEFAULT.configFile)
+    try {
+      _config = require(_configFile)
+    } catch (error) {
+      _verbose && console.warn('settings config file', _configFile, 'not found, use defaults')
+      _config = DEFAULT
+    }
+
+    _env = process.env[_config.processEnv] || process.argv[_config.argv]
+    _verbose = process.argv.indexOf('--verbose')
+    _load(_env)
+  }
+
+  function _load (env) {
     if (!env) {
-      __verbose && console.warn('missing env in settings > use "_root" settings')
-      __env = env = '_root'
+      _verbose && console.warn('missing env in settings > use "_root" settings')
+      _env = env = '_root'
     }
     try {
-      __settings = require(path.join(__config.path, env))
+      _settings = require(path.join(_config.path, env))
     } catch (error) {
-      __verbose && console.error('unable to load settings', env, ' in', __config.path, error)
+      _verbose && console.error('unable to load settings', env, ' in', _config.path, error)
       throw new Error('SETTINGS_LOAD_ERROR')
     }
   }
 
-  __init()
+  _init()
 
-  return Object.freeze({
-    env: __env,
-    ...__settings
+  return deepFreeze({
+    env: _env,
+    ..._settings
   })
 }
 
