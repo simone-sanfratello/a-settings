@@ -11,9 +11,10 @@ node.js settings provider for different environments
 - Declare env in `process.argv` or in `NODE_ENV`
 - DRY settings using root configuration and env customization
 - Improve security avoiding settings runtime reassignment or injection
+- Freeze values, avoid injection at runtime
+- Use plain `js` over `json` and `env` files and be free to use comments and functions without limitations
+- Simply use `env` vars from process env 
 - Stop doing this, it's not maintanable
-- Freeze values
-- Use plain `js` over `json` and env files and be free to use comments and functions without limitations
 
 ````js
 if(process.env.NODE_ENV == 'debug') {
@@ -39,14 +40,15 @@ http.createServer((request, response) => {
 ````
 
 declare settings in `settings/_root.js`
+
 ````js
 const app = {
   url: '',
   name: 'myapp',
   port: 9001,
   log: {
-    level: 'info',
-    path: '/var/log/myapp'
+    level: process.env.LOG_LEVEL || 'warn',
+    pretty: process.env.LOG_PRETTY === 'true',
   }
 }
 
@@ -59,7 +61,7 @@ const app = require('./_root')
 
 app.port = 9002
 app.log.level = 'trace'
-app.log.path = '/tmp/myapp.log'
+app.log.pretty = true
 
 module.exports = app
 ````
@@ -112,20 +114,22 @@ module.exports = {
 ````
 
 #### verbosity
+
 To enable verbosity, add `--verbose` at process
+
 ````bash
 node app.js alpha --verbose
 ````
 
 ### TODO
-- [ ] check node engine >= 8
+
 - [ ] load options from `package.json`
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2018-19 [braces lab](https://braceslab.com)
+Copyright (c) 2018-20
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
