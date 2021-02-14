@@ -123,7 +123,8 @@ node app.js alpha --verbose
 
 ### TODO
 
-- [ ] load options from `package.json`
+- [ ] load options from `package.json` 
+- [ ] validate value (async)
 
 ## License
 

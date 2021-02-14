@@ -43,7 +43,7 @@ const Settings = function () {
     }
 
     _env = process.env[_config.processEnv] || process.argv[_config.argv]
-    _verbose = process.argv.indexOf('--verbose')
+    _verbose = process.argv.indexOf('--verbose') !== -1
     _load(_env)
   }
 
